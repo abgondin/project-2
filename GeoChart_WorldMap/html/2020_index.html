@@ -1,0 +1,132 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {
+        'packages':['geochart'],
+        'mapsApiKey': 'AIzaSyD-9tSrke72PouQMnMX-a7eZSW0jkFMBWY'
+      });
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+        var data = google.visualization.arrayToDataTable([
+        ['Country', 'Happyness Index', 'GDP Per Capita'],
+        ['United Arab Emirates', 6.5, 11.1],
+        ['Albania', 5.4, 9.5],
+        ['Argentina', 5.9, 9.8],
+        ['Austria', 7.2, 10.9],
+        ['Australia', 7.1, 10.8],
+        ['Bosnia and Herzegovina', 5.5, 9.6],
+        ['Bangladesh', 5.3, 8.5],
+        ['Belgium', 6.8, 10.8],
+        ['Bulgaria', 5.6, 10.0],
+        ['Bahrain', 6.2, 10.6],
+        ['Benin', 4.4, 8.1],
+        ['Brazil', 6.1, 9.5],
+        ['Canada', 7.0, 10.7],
+        ['Switzerland', 7.5, 11.1],
+        ['Chile', 6.2, 10.0],
+        ['Cameroon', 5.2, 8.2],
+        ['China', 5.8, 9.7],
+        ['Colombia', 5.7, 9.5],
+        ['Cyprus', 6.3, 4],
+        ['Germany', 7.3, 10.8],
+        ['Denmark', 7.5, 10.9],
+        ['Dominican Republic', 5.2, 9.8],
+        ['Ecuador', 5.4, 9.2],
+        ['Estonia', 6.5, 10.5],
+        ['Egypt', 4.5, 9.4],
+        ['Spain', 6.5, 10.5],
+        ['Ethiopia', 4.5, 7.7],
+        ['Finland', 7.9, 10.8],
+        ['France', 6.7, 10.6],
+        ['United Kingdom', 6.8, 10.6],
+        ['Georgia', 5.1, 9.6],
+        ['Ghana', 5.3, 8.6],
+        ['Greece', 5.8, 10.2],
+        ['Croatia', 6.5, 10.2],
+        ['Hungary', 6.0, 10.3],
+        ['Ireland', 7.0, 11.3],
+        ['Israel', 7.2, 10.5],
+        ['India', 4.2, 8.7],
+        ['Iraq', 4.8, 9.2],
+        ['Iceland', 7.6, 10.8],
+        ['Italy', 6.5, 10.6],
+        ['Jordan', 4.1, 9.2],
+        ['Japan', 6.1, 10.6],
+        ['Kenya', 4.5, 8.4],
+        ['Kyrgyzstan', 6.2, 8.5],
+        ['Cambodia', 4.4, 8.4],
+        ['Kazakhstan', 6.2, 10.1],
+        ['Lithuania', 6.4, 10.5],
+        ['Latvia', 6.2, 10.3],
+        ['Morocco', 4.8, 8.9],
+        ['Montenegro', 5.7, 9.9],
+        ['North Macedonia', 5.1, 9.7],
+        ['Myanmar', 4.4, 8.6],
+        ['Mongolia', 6.0, 9.4],
+        ['Malta', 6.2, 5],
+        ['Mauritius', 6.0, 10.0],
+        ['Mexico', 6.0, 9.8],
+        ['Namibia', 4.5, 9.1],
+        ['Nigeria', 5.5, 8.5],
+        ['Netherlands', 7.5, 10.9],
+        ['Norway', 7.3, 11.0],
+        ['New Zealand', 7.3, 10.6],
+        ['Bolivia', 5.6, 9.0],
+        ['Czech Republic', 6.9, 10.5],
+        ['Hong Kong S.A.R. of China', 5.3, 5],
+        ['Iran', 4.9, 5],
+        ['Ivory Coast', 5.3, 8.6],
+        ['Kosovo', 6.3, 5],
+        ['Laos', 5.3, 9.0],
+        ['Moldova', 5.8, 9.5],
+        ['Russia', 5.5, 10.2],
+        ['South Korea', 5.8, 10.6],
+        ['Taiwan Province of China', 6.8, 7],
+        ['Tanzania', 3.8, 7.9],
+        ['Venezuela', 4.6, 5],
+        ['Philippines', 5.1, 9.1],
+        ['Poland', 6.1, 10.4],
+        ['Portugal', 5.8, 10.4],
+        ['Serbia', 6.0, 9.8],
+        ['Saudi Arabia', 6.6, 10.7],
+        ['Sweden', 7.3, 10.8],
+        ['Slovenia', 6.5, 10.5],
+        ['Slovakia', 6.5, 10.3],
+        ['El Salvador', 5.5, 9.0],
+        ['Thailand', 5.9, 9.8],
+        ['Tajikistan', 5.4, 8.1],
+        ['Tunisia', 4.7, 9.2],
+        ['Turkey', 4.9, 10.2],
+        ['Ukraine', 5.3, 9.4],
+        ['Uganda', 4.6, 7.7],
+        ['United States', 7.0, 11.0],
+        ['Uruguay', 6.3, 9.9],
+        ['South Africa', 4.9, 9.3],
+        ['Zambia', 4.8, 8.1],
+        ['Zimbabwe', 3.2, 7.8]
+        ]);
+
+        var options = {
+          sizeAxis: { minValue: 0, maxValue: 10 },
+          //region: '155', // Western Europe
+          displayMode: 'region',
+          magnifyingGlass: {enable: true, zoomFactor: 7.5},
+          colorAxis: {minValue: 0,  colors: ['#92CD28', '#B6EE56','#E4FF7F', '#FFA33F', '#F78914']},
+          backgroundColor: '#EBF5FB',
+          datalessRegionColor: '#D7DBDD',
+          defaultColor: '#f5f5f5',
+        };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+        chart.draw(data, options);
+      }
+      
+    </script>
+  </head>
+  <body>
+    <div id="regions_div" style="width: 1900px; height: 900px;"></div>
+  </body>
+</html>
